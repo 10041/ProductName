@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+            <action method="addItem"><type>skin_css</type><name>css/ProductThemeMain.css</name><params/><if><![CDATA[<!--[if (gte IE 9) | (IEMobile)]><!-->]]></if></action>
+            <action method="addItem"><type>skin_js</type><name>js/ProductTheme.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/Popup.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/ProductDetailsTabs.js</name></action>
+            <remove name="global_notices" />
+        </reference>
+        <reference name="footer">
+            <remove name="cms_footer_links" />
+            <remove name="cms_footer_links_sm" />
+            <block type="core/template" name="footer.socialLinks" as="socialLinks" after="footer.newsletter" template="page/template/socialLinks.phtml"/>
+            <block type="core/template" name="footer.linksContainer" as="linksContainer" template="page/template/linksContainer.phtml"/>
+            <action method="unsetChild"><name>footer_links</name></action>
+            <action method="unsetChild"><name>footer_links2</name></action>
+        </reference>
+        <reference name="footer.linksContainer">
+            <action method="insert"><block>footer_links</block></action>
+            <action method="insert"><block>footer_links2</block></action>
+        </reference>
+    </default>
+    <catalog_product_view>
+        <reference name="product.info.options.wrapper">
+            <block type="catalog/product_view" name="priceInfo" as="priceInfo" template="catalog/product/priceInfo.phtml"/>
+            <action method="append"><block>product.info.addtocart</block></action>
+        </reference>
+        <reference name="product.info.options.wrapper.bottom">
+            <block type="core/template" name="product.info.options.wrapper.bottom.customize" as="customize" template="catalog/product/view/customizeButton.phtml"/>
+            <remove name="product.info.addto" />
+            <remove name="product.info.sharing" />
+        </reference>
+        <!--<reference name="product.info.container1">
+            <block type="catalog/product_view" name="share" as="share"  template="catalog/product/view/sharing.phtml"/>
+        </reference>-->
+    </catalog_product_view>
+</layout>

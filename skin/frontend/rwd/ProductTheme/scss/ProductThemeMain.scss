@@ -1,0 +1,649 @@
+.logo {
+  display: inline-block;
+  padding: 15px 0 0 0;
+  img {
+    max-width: 80px;
+    min-height: 0;
+  }
+}
+
+$mq-support: true !default;
+$mq-fixed-value: 1024px !default;
+
+@mixin bp($feature, $value) {
+  // Set global device param
+  $media: only screen;
+
+  // Media queries supported
+  @if $mq-support == true {
+
+    @media #{$media} and ($feature: $value) {
+      @content;
+    }
+
+    // Media queries not supported
+  } @else {
+
+    @if $feature == 'min-width' {
+      @if $value <= $mq-fixed-value {
+        @content;
+      }
+    } @else if $feature == 'max-width' {
+      @if $value >= $mq-fixed-value {
+        @content;
+      }
+    }
+
+  }
+}
+
+@include bp(min-width, 1px) {
+
+  .logo {
+    max-width: 80px;
+    min-height: 0px;
+
+    .small {
+      display: none;
+    }
+    .large {
+      display: block;
+    }
+  }
+}
+
+.header-message {
+  text-align: center;
+  font-size: small;
+  color: red;
+  padding: 7px 0px 7px 0px;
+  background: #f7f7f79e;
+}
+
+.header-buttons {
+  display: inline-block;
+}
+
+.search-form {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 10px 0 10px 0;
+}
+
+.header-minicart {
+  display: inline-block;
+  vertical-align: middle;
+  .skip-cart {
+    padding: 0;
+  }
+}
+
+.skip-account {
+  vertical-align: middle;
+  display: inline-block;
+  padding: 0;
+  .icon:hover {
+    color: #f44336;
+  }
+}
+
+.skip-links {
+  display: inline-block;
+}
+
+
+.page-header {
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  max-width: none;
+  background: white;
+}
+
+.page-header-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.page{
+  background: #f7f7f7;
+}
+
+
+#search {
+  border: none;
+  width:0;
+  color:red;
+
+/*  -webkit-transition: width 0.3s;
+  -moz-transition: width 0.3s;
+  -ms-transition: width 0.3s;
+  -o-transition: width 0.3s;
+  transition: width 0.3s;*/
+}
+
+#search_mini_form .search-button {
+  /*&:hover {
+    background: #f44336;
+  }*/
+}
+
+#searchSubmitButton {
+  background: red;
+}
+
+#header-nav {
+  border: none;
+}
+
+
+
+.footer-container {
+  margin: 0;
+  padding: 0;
+  max-width: none;
+}
+
+.footer {
+  border: none;
+  .block-subscribe {
+    float: left;
+    width: 50%;
+    height: 230px;
+    background: #332722;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+    .block-content {
+      width: 400px;
+      margin: 0;
+      padding: 0;
+    }
+    .input-box {
+      width: 350px;
+    }
+  }
+  .links {
+    margin-top: 22px;
+    margin-bottom: 22px;
+    width: unset;
+    padding: 0;
+    a:hover {
+      color: brown;
+      text-decoration: none;
+    }
+  }
+  address {
+    margin: 0;
+    background: #332722;
+    color: white;
+  }
+}
+
+
+#newsletter-validate-detail {
+  margin: 0;
+}
+
+.block-title {
+  text-align: center;
+  margin: 0;
+}
+
+.block-title-newsletter-text {
+  font-size: 25px;
+  color: white;
+  font-weight: 600;
+}
+
+input#newsletter {
+  border: none;
+}
+
+
+input#newsletter::placeholder {
+  color: black;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+button#subscribeButton {
+  background: white;
+  height: 30px;
+  img {
+    width: 11px;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.social-links {
+  background: #f44336;
+  float: right;
+  width: 50%;
+
+  height: 230px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  div {
+    div {
+      font-size: 25px;
+      color: white;
+      font-weight: 600;
+      text-transform: uppercase;
+      text-align: center;
+    }
+  }
+  ul{
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    li{
+      display: inline-block;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+
+
+.links-container {
+  display: inline-flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.links .block-title {
+  border: none;
+}
+
+.footer-links-line {
+  border-left: 2px solid #ccc;
+  margin: 15px;
+}
+
+
+.more-views {
+  display: inline-block;
+  position: absolute;
+}
+
+.product-img-box .product-image {
+  display: inline-block;
+  margin-left: 85px;
+}
+
+.product-image-thumbs a {
+  display: unset;
+}
+
+.product-image-thumbs li {
+  display: unset;
+}
+
+.product-img-box {
+  width: unset;
+}
+
+.product-img-box .product-image img {
+  max-width: 450px;
+}
+
+.product-options {
+  display: none;
+
+  overflow:hidden;
+  position:fixed;
+  z-index: 9999;
+  min-height: unset;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 760px;
+  height: 600px;
+  background: #f7f7f7;
+
+  .last {
+    /*display: inline-block;
+    position: absolute;
+    margin-left: 20px;
+    width: 300px;*/
+  }
+  .add-to-cart {
+    position: absolute;
+    display: inline-block;
+    border: none;
+    bottom: 10px;
+    margin-left: 20px;
+  }
+
+  .required {
+    right: unset;
+    text-align: unset;
+    display: none;
+  }
+  #image-main {
+    width: 350px;
+    float: left;
+    margin-bottom: 20px;
+  }
+}
+
+.product-view .product-shop {
+  .last .price-info {
+    float: unset;
+    text-align: unset;
+    padding: 0;
+    margin-top: 20px;
+  }
+  .price-info {
+    float: left;
+    padding: 0;
+    clear: left;
+    margin: 0;
+  }
+  .short-description {
+    margin-top: 80px;
+    margin-bottom: 20px;
+  }
+  .product-purchase-setting {
+    float: right;
+    width: 45%;
+    height: auto;
+    .add-to-cart {
+      position: absolute;
+      margin-left: 0;
+      bottom: 10px;
+    }
+    .price-info {
+      float: unset;
+      clear: unset;
+      text-align: left;
+    }
+  }
+}
+
+
+.blackout {
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  display: none;
+}
+
+.product-options dl.last dd.last {
+  margin: 0;
+  position: unset;
+}
+
+.close-button {
+  float: right;
+  background: none;
+  border: none;
+  img {
+    width: 20px;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.product-view {
+  .add-to-cart {
+    border-bottom: unset;
+    margin-bottom: 0;
+  }
+  .qty-wrapper .qty {
+    border: none;
+  }
+  .add-to-cart-buttons {
+    float: unset;
+    width: 350px;
+    .button {
+      background: #4bab4f;
+      margin: 0;
+    }
+  }
+  .product-shop {
+    .product-name {
+      float: unset;
+      .h1 {
+        color: #636363;
+      }
+    }
+    .price-box {
+      margin-top: 10px;
+      .full-product-price .price {
+        color: #f44336;
+      }
+      .price {
+        color: #f44336;
+      }
+      .old-price .price {
+        color: #a0a0a0;
+      }
+      .special-price .price {
+        color: #f44336;
+      }
+      .regular-price .price {
+        color: #f44336;
+      }
+    }
+  }
+
+  .block-related {
+    width: 100%;
+    margin-bottom: 100px;
+  }
+}
+
+.customize-button {
+  min-height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+  min-width: 160px;
+  width: 350px;
+  white-space: normal;
+  background: rgba(0, 0, 0, 0.65);
+  margin: 0;
+  color: white;
+  text-transform: uppercase;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 128px;
+  padding-right: 128px;
+  cursor: pointer;
+
+  &:hover {
+    color: white;
+    text-decoration: unset;
+  }
+}
+
+.product-options-bottom {
+  border: none;
+  padding: 0;
+  background: none;
+}
+
+.product-details-tabs {
+  .tab {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    &:hover {
+      color: #f44336;
+    }
+    .up-img {
+      content:url(http://www.magento.loc/skin/frontend/rwd/ProductTheme/images/arrow-up-sign-to-navigate.png);
+    }
+    .down-img {
+      content:url(http://www.magento.loc/skin/frontend/rwd/ProductTheme/images/arrow-down-sign-to-navigate.png);
+    }
+    img {
+      width: 10px;
+      display: unset;
+    }
+  }
+  .tab-content {
+    margin-left: 25px;
+    margin-bottom: 10px;
+
+    h2 {
+      display: none;
+    }
+  }
+}
+
+.product-name h1 {
+  border-bottom: none;
+}
+
+.product-view .sharing-links a {
+  background: unset;
+}
+
+.product-view .sharing-links {
+  opacity: 0.5;
+  .link-facebook {
+    img {
+      content: url(http://www.magento.loc/skin/frontend/rwd/ProductTheme/images/share/facebook-letter-logo.png);
+      width: 20px;
+    }
+  }
+  .link-email-friend {
+    img {
+      content: url(http://www.magento.loc/skin/frontend/rwd/ProductTheme/images/share/email.png);
+      width: 20px;
+    }
+  }
+  .link-twitter {
+    img {
+      content: url(http://www.magento.loc/skin/frontend/rwd/ProductTheme/images/share/twitter.png);
+      width: 20px;
+    }
+  }
+}
+
+.product-view .sharing-links li {
+  padding: 0;
+  margin-right: 15px;
+}
+
+.block-related {
+  .product {
+    margin: 0;
+    margin-right: 50px;
+    display: inline-block;
+  }
+  .product-details {
+    margin: 0;
+    .price-box {
+      a {
+        width: 100%;
+      }
+      span {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.mini-products-list {
+  .product-details {
+    margin: 0;
+    .price-box {
+      a {
+        color: #f44336;
+      }
+      span {
+        color: #f44336;
+      }
+    }
+    .product-name {
+      text-align: center;
+      &:hover {
+        color: #f44336;
+      }
+    }
+  }
+  .product-image {
+    width: 100%;
+    border: none;
+    margin-bottom: 15px;
+  }
+}
+
+#header-account.skip-active {
+  right: 1px;
+}
+
+.related-image {
+  width: 200px;
+  margin: 0 auto;
+}
+
+p.product-name a {
+  &:hover {
+    color: #f44336;
+  }
+}
+
+.breadcrumbs {
+  .back-link {
+    float: right;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-family: "Raleway", "Helvetica Neue", Verdana, Arial, sans-serif;
+
+  }
+  a {
+    &:hover {
+      color: #f44336;
+      text-decoration: none;
+    }
+  }
+}
+
+
+.back-to-top-page {
+  position: absolute;
+  right: 20%;
+  img {
+    content: url(http://www.magento.loc/skin/frontend/rwd/ProductTheme/images/curved-white-arrow.png);
+    width: 20px;
+  }
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.product-view .product-shop .price-box {
+  a {
+    color: #4CAF50;
+    text-align: center;
+  }
+  text-align: left;
+}
+
+.no-rating a {
+  color: #4bab4f;
+}
