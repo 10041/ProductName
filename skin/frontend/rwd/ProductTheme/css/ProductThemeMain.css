@@ -38,8 +38,6 @@
   vertical-align: middle;
   display: inline-block;
   padding: 0; }
-  .skip-account .icon:hover {
-    color: #f44336; }
 
 .skip-links {
   display: inline-block; }
@@ -295,6 +293,8 @@ button#subscribeButton {
   .product-view .add-to-cart-buttons .button {
     background: #4bab4f;
     margin: 0; }
+    .product-view .add-to-cart-buttons .button:hover {
+      opacity: 0.8; }
 .product-view .product-shop .product-name {
   float: unset; }
   .product-view .product-shop .product-name .h1 {
@@ -314,6 +314,12 @@ button#subscribeButton {
 .product-view .block-related {
   width: 100%;
   margin-bottom: 100px; }
+.product-view .add-to-cart-wrapper {
+  float: unset;
+  clear: unset;
+  width: unset;
+  padding-left: unset;
+  margin-bottom: 10px; }
 
 .customize-button {
   min-height: 40px;
@@ -333,7 +339,8 @@ button#subscribeButton {
   cursor: pointer; }
   .customize-button:hover {
     color: white;
-    text-decoration: unset; }
+    text-decoration: unset;
+    opacity: 0.8; }
 
 .product-options-bottom {
   border: none;
@@ -444,5 +451,51 @@ p.product-name a:hover {
 
 .no-rating a {
   color: #4bab4f; }
+
+.product-pricing, .tier-prices {
+  margin-bottom: 20px; }
+
+.nav-primary li:hover > a {
+  color: #f44336; }
+
+.skip-account:not(.skip-active):hover .icon {
+  background-position: unset; }
+
+.skip-account {
+  background-image: url(http://www.magento.loc/skin/frontend/rwd/ProductTheme/images/menuIcons/user-icon.png);
+  background-size: 19px;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.5; }
+  .skip-account .icon {
+    background-image: unset; }
+
+.skip-cart {
+  background-image: url(http://www.magento.loc/skin/frontend/rwd/ProductTheme/images/menuIcons/cart-icon.png);
+  background-size: 19px;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.5; }
+  .skip-cart .icon {
+    background-image: unset; }
+
+#search_mini_form .search-button:before {
+  background-image: url(http://www.magento.loc/skin/frontend/rwd/ProductTheme/images/menuIcons/search-icon.png);
+  background-size: 19px;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.5; }
+
+.main-container {
+  min-height: 600px; }
+
+.box-up-sell h2 {
+  text-align: center; }
+
+.price-box .price {
+  color: #f44336; }
+
+.no-touch .product-image:hover {
+  border-color: #f44336; }
 
 /*# sourceMappingURL=ProductThemeMain.css.map */

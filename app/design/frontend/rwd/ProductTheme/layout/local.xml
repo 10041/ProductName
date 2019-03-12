@@ -23,7 +23,9 @@
     </default>
     <catalog_product_view>
         <reference name="product.info.options.wrapper">
-            <block type="catalog/product_view" name="priceInfo" as="priceInfo" template="catalog/product/priceInfo.phtml"/>
+            <block type="bundle/catalog_product_price" name="priceInfo" as="priceInfo" template="catalog/product/priceInfo.phtml"/>
+            <!--<action method="addPriceBlockType"><type>bundle</type><block>bundle/catalog_product_price</block><template>bundle/catalog/product/price.phtml</template></action>-->
+            <!--<action method="insert"><block>product.tierprices</block></action>-->
             <action method="append"><block>product.info.addtocart</block></action>
         </reference>
         <reference name="product.info.options.wrapper.bottom">
